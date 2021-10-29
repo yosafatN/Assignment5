@@ -1,0 +1,27 @@
+<div>
+    <h1> {{ country.name }} </h1>
+    <table>
+        <tr>
+            <td class="title">Capital</td>
+            <td class="content">{{ country.capital }}</td>
+        </tr>
+        <tr>
+            <td class="title">Area</td>
+            <td class="content">{{ country.area | number }} Km<sup>2</sup></td>
+        </tr>
+        <tr>
+            <td class="title">Population</td>
+            <td class="content">{{ country.population | number }} People</td>
+        </tr>
+        <tr>
+            <td class="title">GDP</td>
+            <td class="content">{{ country.gdp | number }} USD</td>
+        </tr>
+        <tr>
+            <td class="title">Currency</td>
+            <td class="content">{{ country.currency }}</td>
+        </tr>
+    </table>
+
+    <button mat-flat-button color="primary" (click)="closeDialog()">Close</button>
+</div>

@@ -1,0 +1,60 @@
+<table>
+    <tr>
+        <div class="subtitle">
+            <h4>Three Most Populated Country</h4>
+        </div>
+    </tr>
+    <tr>
+        <mat-grid-list cols="3" rowHeight="150px">
+            <mat-grid-tile *ngFor="let country of sortPopulation">
+                <mat-card 
+                (click)="clickCard(country.id)" 
+                matRipple 
+                [matRippleCentered]="true">
+                    <mat-card-title> {{ country.name }}</mat-card-title>
+                    <mat-card-content>
+                        <p class="card-content">{{ country.population | number }}</p>
+                        <p class="card-content">People</p>
+                    </mat-card-content>
+                  </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </tr>
+
+    <tr>
+        <div class="subtitle">
+            <h4>Three Largest Countries (Area)</h4>
+        </div>
+    </tr>
+    <tr>
+        <mat-grid-list cols="3" rowHeight="130px" >
+            <mat-grid-tile *ngFor="let country of sortArea">
+                <mat-card (click)="clickCard(country.id)" matRipple>
+                    <mat-card-title> {{ country.name }}</mat-card-title>
+                    <mat-card-content>
+                        <p class="card-content">{{ country.area | number }} Km<sup>2</sup></p>
+                    </mat-card-content>
+                  </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </tr>
+
+    <tr>
+        <div class="subtitle">
+            <h4>Three Countries with The Highest GDP</h4>
+        </div>
+    </tr>
+    <tr>
+        <mat-grid-list cols="3" rowHeight="130px">
+            <mat-grid-tile *ngFor="let country of sortGDP">
+                <mat-card (click)="clickCard(country.id)" matRipple>
+                    <mat-card-title> {{ country.name }}</mat-card-title>
+                    <mat-card-content>
+                        <p class="card-content">{{ country.gdp | number }} USD</p>
+                    </mat-card-content>
+                  </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </tr>
+</table>
+

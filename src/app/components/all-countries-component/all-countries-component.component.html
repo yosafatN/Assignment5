@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        <div class="subtitle">
+            <h4>List of All Countries in Database</h4>
+        </div>
+    </tr>
+    <tr>
+        <mat-grid-list cols="3" rowHeight="150px">
+            <mat-grid-tile *ngFor="let country of countries">
+                <mat-card 
+                (click)="clickCard(country.id)" 
+                matRipple 
+                [matRippleCentered]="true">
+                    <mat-card-title> {{ country.name }}</mat-card-title>
+                    <mat-card-content>
+                        <p class="card-content">Capital</p>
+                        <p class="card-content">({{ country.capital }})</p>
+                    </mat-card-content>
+                  </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </tr>
+</table>
